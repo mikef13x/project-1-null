@@ -1,0 +1,71 @@
+.message{
+width: 40vw;
+height: 25vh;
+text-align: center;
+margin-top: 20px;
+justify-content: center;
+}
+#article  {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.message-header {
+    justify-content: center;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 50px;
+    width: 300px;
+    height: 80px;
+    background-color: rgb(248, 127, 127);
+    color: white;
+    font-size:24px;
+}
+
+#searchBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#listBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar {
+    background-image: linear-gradient(to right, rgb(255, 188, 252), rgb(118, 194, 245));
+    justify-content: space-around;
+    height: 8vh;
+    font-size: 20px;
+    display:flex;
+}
+
+
+body {
+    background-image: url(./assets/images/pink-anime-background-1920-x-1080-sqc1z848r0z9ez75.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+
+.navbar-item > img {
+    width: 200px;
+    height: 70px;
+}
+.navbar-item img {
+    max-height: none;
+}
+
+
+
+
