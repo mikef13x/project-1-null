@@ -1,0 +1,18 @@
+
+.navbar {
+    background-image: linear-gradient(to right, rgb(255, 188, 252), rgb(118, 194, 245));
+}
+
+body {
+    background-image: url(./assets/blue-and-pink-sky-city-thumb-1500x844.jpg);
+    background-repeat: none;
+    background-size: cover;
+    height: 100vh;
+}
+
+#pageTitle {
+    color: white;
+    margin-top:20px;
+    border-radius: 5px;
+    background-color: rgb(255, 188, 252);
+}
