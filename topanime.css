@@ -1,17 +1,6 @@
-.navbar-item > img {
-    width: 200px;
-    height: 70px;
-}
-
-.navbar-item img {
-    max-height: none;
-}
 
 .navbar {
     background-image: linear-gradient(to right, rgb(255, 188, 252), rgb(118, 194, 245));
-    justify-content: space-around;
-    height: 8vh;
-    display:flex;
 }
 
 body {
