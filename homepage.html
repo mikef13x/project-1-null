@@ -13,28 +13,132 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="homepage.html">
-                <img src="./assets/images/Screenshot 2024-03-14 192632.png">
+                <img src="./assets/images/Screenshot 2024-03-14 192632.png" alt = "AniName Logo" style="max-height:50px;">
             </a>
         </div>
-        <div id="navbar" class="navbar-menu"> 
+        <div id="navbar" class="navbar-menu">
         </div>
     </nav>
-    <div id = "article">
+    <div id="article">
+        <article class="message is-danger">
+            <div class="message-header has-text-centered">
+                Welcome To Aniname
+            </div>
+            <div class="message-body has-text-centered">
+                This is how to use this site. Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem
+                Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem
+                ipsem
+            </div>
+        </article>
+    </div>
 
-    <article class="message is-danger">
-        <div class="message-header">
-          <p id = "messageHeader">Welcome To Aniname</p>
-        </div>
-        <div class="message-body">
-         This is how to use this site. Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem Lorem ipsem
-        </div>
-      </article>
+    <div class="buttons are-large is-centered">
+
+        <button class="button is-light is-danger js-modal-trigger" data-target="openModal">Search</button>
+        <button id="topAnime" class="button is-light is-danger">Top Anime</button>
+        <button id = "myList" class="button is-light is-danger" href="mylist.html">My List</button>
     </div>
-    <div id = "buttonContainer">
-    <button id = "searchBtn" href = "searchresults.html" type="submit">Search</button>
-    <button id = "listBtn" href = "mylist.html" type="submit">My List</button>
+
+
+
+    <div id="openModal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Find your Anime!</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="searchForm">
+                    <!-- Input Field -->
+                    <div class="control">
+                        <input id='searchInput' class="input" type="text" placeholder="Search...">
+                    </div>
+
+                    <div class="control is-expanded">
+                        <!-- settings for Dropdown -->
+                        <div class="select is-fullwidth">
+                            <select id="genreSelect">
+                                <option>All Genres</option>
+                                <option>Adventure</option>
+                                <option>Action</option>
+                                <option>Comedy</option>
+                                <option>Horror</option>
+                                <option>Sports</option>
+                                <option>Drama</option>
+                                <option>Mystery</option>
+                                <option>Supernatural</option>
+                                <option>Avant Garde</option>
+                                <option>Fantasy</option>
+                                <option>Romance</option>
+                                <option>Suspence</option>
+                                <option>Award Winning</option>
+                                <option>Sci-Fi</option>
+                                <option>Gourmet</option>
+                                <option>Slice Of Life</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control is-expanded">
+                        <!-- settings for Dropdown -->
+                        <div class="select is-fullwidth">
+                            <select id="themeSelect">
+                                <option>All Themes</option>
+                                <option>Adventure</option>
+                                <option>Action</option>
+                                <option>Comedy</option>
+                                <option>Horror</option>
+                                <option>Sports</option>
+                                <option>Drama</option>
+                                <option>Mystery</option>
+                                <option>Supernatural</option>
+                                <option>Avant Garde</option>
+                                <option>Fantasy</option>
+                                <option>Romance</option>
+                                <option>Suspence</option>
+                                <option>Award Winning</option>
+                                <option>Sci-Fi</option>
+                                <option>Gourmet</option>
+                                <option>Slice Of Life</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control is-expanded">
+                        <!-- settings for Dropdown -->
+                        <div class="select is-fullwidth">
+                            <select id="studioSelect">
+                                <option>All Studios</option>
+                                <option>Adventure</option>
+                                <option>Action</option>
+                                <option>Comedy</option>
+                                <option>Horror</option>
+                                <option>Sports</option>
+                                <option>Drama</option>
+                                <option>Mystery</option>
+                                <option>Supernatural</option>
+                                <option>Avant Garde</option>
+                                <option>Fantasy</option>
+                                <option>Romance</option>
+                                <option>Suspence</option>
+                                <option>Award Winning</option>
+                                <option>Sci-Fi</option>
+                                <option>Gourmet</option>
+                                <option>Slice Of Life</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- button -->
+
+                </form>
+
+
+            </section>
+            <footer class="modal-card-foot">
+                <button id="goToResults" class="button is-success">Search</button>
+                <button class="button">Cancel</button>
+            </footer>
+        </div>
     </div>
-    
     <script src="homepage.js"></script>
 </body>
 
