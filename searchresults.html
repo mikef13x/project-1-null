@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniName Search Results</title>
+    <!-- Bulma CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- My CSS file -->
+    <link rel="stylesheet" href="searchresults.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id='navbar' class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <!-- navbar Image alt tag and height -->
+            <a class="navbar-item" href="homepage.html">
+                <img src="Screenshot 2024-03-14 192632.png" alt="AniName Logo" style="max-height:100px;">
+            </a>
+        </div>
+        <!-- places items at the end of the box similar to justify content end  -->
+        <div class="navbar-end">
+            <!-- changes height and fontsize of the navbar text -->
+            <a class="navbar-item" style="max-height: 100px; font-size: 35px; ">
+                <i class="fa fa-list" aria-hidden="true"></i>
+                My List 
+            </a>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <!-- Shrinks the Card to one-third of the column -->
+            <div class="columns">
+                <div class="column is-one-third">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Search AniName
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <form id="searchForm">
+                                    <!-- Input Field -->
+                                    <div class="control">
+                                        <input id='searchInput' class="input" type="text" placeholder="Search...">
+                                    </div>
+                                    <div class="field">
+                                        <div class="control is-expanded">
+                                            <!-- settings for Dropdown -->
+                                            <div class="select is-fullwidth">
+                                                <select id="genreSelect">
+                                                    <option>All Genres</option>
+                                                    <option>Adventure</option>
+                                                    <option>Action</option>
+                                                    <option>Comedy</option>
+                                                    <option>Horror</option>
+                                                    <option>Sports</option>
+                                                    <option>Drama</option>
+                                                    <option>Mystery</option>
+                                                    <option>Supernatural</option>
+                                                    <option>Avant Garde</option>
+                                                    <option>Fantasy</option>
+                                                    <option>Romance</option>
+                                                    <option>Suspence</option>
+                                                    <option>Award Winning</option>
+                                                    <option>Sci-Fi</option>
+                                                    <option>Gourmet</option>
+                                                    <option>Slice Of Life</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- button -->
+                                        <div class="control">
+                                            <button id="searchButton" class="button is-info">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Search Results Container -->
+                <div class="column">
+                    <div id="resultsContainer" class="column">
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+      </section>
+      <script src="searchresults.js"></script>
+</body>
+</html>
+
+
+
+    
+
+
+
+
+
+</div>
+</html>
