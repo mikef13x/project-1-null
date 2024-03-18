@@ -1,9 +1,10 @@
 .message{
 width: 40vw;
 height: 25vh;
-text-align: center;
 margin-top: 20px;
-justify-content: center;
+}
+.message-header{
+    display:block;
 }
 #article  {
     display: flex;
@@ -11,40 +12,16 @@ justify-content: center;
     margin-top: 200px;
 }
 
-.message-header {
-    justify-content: center;
-}
-
-#buttonContainer {
-    display: flex;
-    justify-content: center;
-}
-
-button {
-    margin: 50px;
+ button {
+    margin:40px;
     width: 300px;
     height: 80px;
-    background-color: rgb(248, 127, 127);
-    color: white;
     font-size:24px;
 }
 
-#searchBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#listBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .navbar {
     background-image: linear-gradient(to right, rgb(255, 188, 252), rgb(118, 194, 245));
-    justify-content: space-around;
-    height: 8vh;
-    font-size: 20px;
-    display:flex;
+   
 }
 
 
@@ -58,14 +35,11 @@ body {
 
 
 
-.navbar-item > img {
-    width: 200px;
-    height: 70px;
+
+
+
+
+.noMargin {
+    margin: 0px;
 }
-.navbar-item img {
-    max-height: none;
-}
-
-
-
 
