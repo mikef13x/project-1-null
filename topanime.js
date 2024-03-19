@@ -20,7 +20,6 @@ function getTopAnime() {
                
                 console.log(animeTitle)
 
-
                 var animeCard = document.createElement('div');
                 animeCard.classList.add('box');
 
