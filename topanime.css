@@ -42,4 +42,9 @@ button {
 .modal-card {
     background-color: pink;
     color: white;
+    display: none;
+}
+
+.anime-info {
+    cursor: default;
 }
