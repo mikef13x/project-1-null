@@ -3,8 +3,10 @@ html,body{
 }
 
 
-body{
+html{
+    height: 100vh;
     background-image: url(Skyline.jpeg);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -18,7 +20,11 @@ body{
 .card-header-title {
     font-size: 1.25rem;
     color: #ffffff; 
-    background-image: linear-gradient(to left,rgb(255, 188, 252), rgb(118, 194, 245));
+    background-image: linear-gradient(to left,rgb(255, 188, 252), rgb(177, 224, 255));
     
+  }
+
+  .animeCard{
+    background-image: linear-gradient(rgb(255, 222, 253), rgb(196, 231, 255));
   }
   
