@@ -12,12 +12,13 @@ function getTopAnime() {
             for (let i = 0; i < itemsPerPage; i++) {
                 var animeTitle = data.data[i].titles[0].title;
                 var synopsis = data.data[i].synopsis;
+                var newSynopsis = synopsis.substring(0, synopsis.length - 24);
                 var rank = 'Rank: ' + data.data[i].rank;
                 var score = '⭐' + data.data[i].score;
-                var image = data.data[i].images.jpg.small_image_url;
+                var image = data.data[i].images.jpg.large_image_url;
                 var episodes = '(' + data.data[i].episodes + ' eps)';
                 var malId = data.data[i].mal_id;
-               
+
                 console.log(animeTitle)
 
                 var animeCard = document.createElement('div');
@@ -27,25 +28,36 @@ function getTopAnime() {
 
                 // ADD BUTTON TO ADD ANIME TO 'MY LIST'
                 animeCard.innerHTML = `
-    <img src="${image}">
-    <div class='anime-info'>
-    <h1><strong>${animeTitle}</strong></h1>
-    <h4><strong>${rank}</strong></h4>
-    <p>${episodes}</p>
-    <p>${synopsis}</p>
-    <p>${score}</p>
-    <button id="${malId}" data-anime-title="${animeTitle.toString()}" data-anime-image=${image} class="button is-danger">Add to MyList</button>
-    `;
-              
+                    <img class='anime-img' src="${image}">
+                    <div class='anime-info'>
+                    <h1><strong>${animeTitle}</strong></h1>
+                    <h4><strong>${rank}</strong></h4>
+                    <p>${episodes}</p>
+                    <p>${score}</p>
+                    <button id="${malId}" data-anime-title="${animeTitle.toString()}" data-anime-image=${image} class="button is-danger">+ Add to MyList</button>
+                         `;
+
                 document.querySelector('.top-anime-content').appendChild(animeCard);
                 var myListBtn = document.getElementById(malId);
-                myListBtn.addEventListener("click", setList)
+                myListBtn.addEventListener("click", setList);
 
+                var modal = document.createElement('div');
+                modal.classList.add('modal', 'modal-card');
+                modal.innerHTML = `<p>${newSynopsis}</p>`
+                console.log(newSynopsis)
+                animeCard.appendChild(modal);
 
+                animeCard.addEventListener('mouseenter', () => {
+                    modal.style.display = 'block';
+                });
+                animeCard.addEventListener('mouseleave', () =>{
+                    modal.style.display = 'none';
+                })
             }
-         
+
+
             var nextPageButton = document.createElement('button');
-        nextPageButton.classList.add('button', 'are-medium', 'is-responsive', 'is-hovered', 'is-danger');
+            nextPageButton.classList.add('button', 'are-medium', 'is-responsive', 'is-hovered', 'is-danger');
 
             nextPageButton.textContent = 'Next Page';
             nextPageButton.addEventListener('click', () => {
