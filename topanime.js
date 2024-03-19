@@ -1,6 +1,6 @@
 var topAnimeURL = 'https://api.jikan.moe/v4/top/anime';
 var currentPage = 1;
-
+var animeList = JSON.parse(localStorage.getItem("Anime")) || []
 var itemsPerPage = 10;
 
 
