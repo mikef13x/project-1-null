@@ -1,15 +1,14 @@
 var topAnimeURL = 'https://api.jikan.moe/v4/top/anime';
 var currentPage = 1;
-var itemsPerPage = 25;
-var animeList = JSON.parse(localStorage.getItem("Anime")) || []
 
-
+var itemsPerPage = 10;
 
 
 function getTopAnime() {
     fetch(`${topAnimeURL}?page=${currentPage}`)
         .then(response => response.json())
         .then(data => {
+
             for (let i = 0; i < itemsPerPage; i++) {
                 var animeTitle = data.data[i].titles[0].title;
                 var synopsis = data.data[i].synopsis;
@@ -45,8 +44,10 @@ function getTopAnime() {
 
 
             }
-
+         
             var nextPageButton = document.createElement('button');
+        nextPageButton.classList.add('button', 'are-medium', 'is-responsive', 'is-hovered', 'is-danger');
+
             nextPageButton.textContent = 'Next Page';
             nextPageButton.addEventListener('click', () => {
                 currentPage++;
@@ -54,16 +55,22 @@ function getTopAnime() {
                 getTopAnime();
             });
             var prevPageButton = document.createElement('button');
+
+            prevPageButton.classList.add('button', 'are-medium', 'is-responsive', 'is-hovered', 'is-danger');
+
             prevPageButton.textContent = 'Previous Page';
             prevPageButton.addEventListener('click', () => {
                 currentPage--;
                 document.querySelector('.top-anime-content').innerHTML = '';
                 getTopAnime();
-            })
+
+            });
             document.querySelector('.top-anime-content').appendChild(prevPageButton);
             document.querySelector('.top-anime-content').appendChild(nextPageButton);
-        })
+        });
+
 }
+
 
 getTopAnime();
 

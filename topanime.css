@@ -4,10 +4,11 @@
 }
 
 body {
-    background-image: url(./assets/blue-and-pink-sky-city-thumb-1500x844.jpg);
-    background-repeat: none;
+    background-image: url(./assets/background-img.png);
     background-size: cover;
     height: 100vh;
+    width: 100vw;
+
 }
 
 #pageTitle {
@@ -15,4 +16,30 @@ body {
     margin-top:20px;
     border-radius: 5px;
     background-color: rgb(255, 188, 252);
+}
+
+button {
+    margin: 1rem;
+    width: 200px;
+}
+
+.my-list-btn {
+    display: flex;
+    position: absolute;
+    right: 0px;
+}
+
+.anime-img {
+    max-height: 100px;
+    position: absolute;
+    left: 2rem;
+}
+
+.anime-info {
+    text-align: center;
+}
+
+.modal-card {
+    background-color: pink;
+    color: white;
 }
