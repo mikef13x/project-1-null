@@ -20,8 +20,26 @@ body {
 
 button {
     margin: 1rem;
+    width: 200px;
 }
 
-img {
-    align-items: left;
+.my-list-btn {
+    display: flex;
+    position: absolute;
+    right: 0px;
+}
+
+.anime-img {
+    max-height: 100px;
+    position: absolute;
+    left: 2rem;
+}
+
+.anime-info {
+    text-align: center;
+}
+
+.modal-card {
+    background-color: pink;
+    color: white;
 }

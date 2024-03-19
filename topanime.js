@@ -13,25 +13,39 @@ function getTopAnime() {
                 var newSynopsis = synopsis.substring(0, synopsis.length - 24); // this will remove the last 24 characters of the synopsis.
                 var rank = 'Rank: ' + data.data[i].rank;
                 var score = '⭐' + data.data[i].score;
-                var image = data.data[i].images.jpg.small_image_url;
+                var image = data.data[i].images.jpg.large_image_url;
                 var episodes = '(' + data.data[i].episodes + ' eps)';
 
                 var animeCard = document.createElement('div');
+
                 animeCard.classList.add('box');
                 // ADD BUTTON TO ADD ANIME TO 'MY LIST'. add <p>${newSynopsis}</p> maybe as a modal.
                 animeCard.innerHTML = `
-                     <img src="${image}">
+                     <img class='anime-img' src="${image}">
                      <div class='anime-info'>
                      <h1><strong>${animeTitle}</strong></h1>
                      <h4><strong>${rank}</strong></h4>
-                     <p>${newSynopsis}</p>
                      <p>${episodes}</p>
                      <p>${score}</p>
+                     </div>
                         `;
                 document.querySelector('.top-anime-content').appendChild(animeCard);
+
+                var modal = document.createElement('div');
+                modal.classList.add('modal', 'modal-background', 'modal-card');
+                modal.innerHTML = `<p>${newSynopsis}</p>`
+                console.log(newSynopsis)
+                animeCard.appendChild(modal);
+
+                animeCard.addEventListener('mouseenter', () => {
+                    modal.style.display = 'block';
+                });
+                animeCard.addEventListener('mouseleave', () =>{
+                    modal.style.display = 'none';
+                })
             }
             var nextPageButton = document.createElement('button');
-            nextPageButton.classList.add('are-medium', 'is-responsive', 'is-hovered', 'is=white');
+            nextPageButton.classList.add('button', 'are-medium', 'is-responsive', 'is-hovered', 'is-danger');
             nextPageButton.textContent = 'Next Page';
             nextPageButton.addEventListener('click', () => {
                 currentPage++;
@@ -39,16 +53,16 @@ function getTopAnime() {
                 getTopAnime();
             });
             var prevPageButton = document.createElement('button');
-            prevPageButton.classList.add('are-medium', 'is-responsive', 'is-hovered', 'is-white');
+            prevPageButton.classList.add('button', 'are-medium', 'is-responsive', 'is-hovered', 'is-danger');
             prevPageButton.textContent = 'Previous Page';
             prevPageButton.addEventListener('click', () => {
                 currentPage--;
                 document.querySelector('.top-anime-content').innerHTML = '';
                 getTopAnime();
-            })
+            });
             document.querySelector('.top-anime-content').appendChild(prevPageButton);
             document.querySelector('.top-anime-content').appendChild(nextPageButton);
-        })
+        });
 }
 
 
