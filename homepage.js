@@ -71,3 +71,25 @@ function myListPage(event) {
 }
 
 myList.addEventListener("click", myListPage)
+
+
+var animeQuoteUrl = "https://animechan.xyz/api/random";
+
+function getAnimeQuote() {
+  fetch(animeQuoteUrl)
+  .then(response => response.json())
+  .then (data => {
+    var quoteArea = document.querySelector(".quote")
+    quoteArea.innerHTML = '"' + data["quote"] + '"';
+
+    var quoteAuthor = document.createElement("p")
+    quoteAuthor.innerHTML = "- " + data["character"]
+    quoteArea.append(quoteAuthor);
+
+    var quoteShow = document.createElement("p")
+    quoteShow.innerHTML = "Anime: " + data["anime"] ;
+    quoteAuthor.append(quoteShow);
+  })
+}
+
+getAnimeQuote();
