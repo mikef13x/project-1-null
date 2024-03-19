@@ -20,15 +20,15 @@ function getTopAnime() {
                 var malId = data.data[i].mal_id;
 
                 console.log(animeTitle)
-
                 var animeCard = document.createElement('div');
                 animeCard.classList.add('box');
+                animeCard.setAttribute('id', malId);
 
 
 
                 // ADD BUTTON TO ADD ANIME TO 'MY LIST'
                 animeCard.innerHTML = `
-                    <img class='anime-img' src="${image}">
+                    <img class='anime-img is-flex' src="${image}">
                     <div class='anime-info'>
                     <h1><strong>${animeTitle}</strong></h1>
                     <h4><strong>${rank}</strong></h4>
@@ -43,15 +43,21 @@ function getTopAnime() {
 
                 var modal = document.createElement('div');
                 modal.classList.add('modal', 'modal-card');
-                modal.innerHTML = `<p>${newSynopsis}</p>`
-                console.log(newSynopsis)
-                animeCard.appendChild(modal);
+                modal.innerHTML = `<p>${newSynopsis}</p>`;
+                modal.setAttribute('id', `${malId}-modal`)
+                console.log(modal)
+                var currentAnimeCard = document.getElementById(malId);
+                var currentModal = document.getElementById( `${malId}-modal`);
+                console.log(currentAnimeCard)
+                currentAnimeCard.appendChild(currentModal);
 
-                animeCard.addEventListener('mouseenter', () => {
-                    modal.style.display = 'block';
+                currentAnimeCard.addEventListener('mouseenter', () => {
+                                    console.log(newSynopsis)
+                    currentModal.style.display = 'block';
                 });
-                animeCard.addEventListener('mouseleave', () =>{
-                    modal.style.display = 'none';
+                currentAnimeCard.addEventListener('mouseleave', () =>{
+                    console.log(newSynopsis)
+                    currentModal.style.display = 'none';
                 })
             }
 
