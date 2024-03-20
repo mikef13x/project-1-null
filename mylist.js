@@ -34,13 +34,18 @@ function createNextPrevBtn() {
     prevBtn.classList.add("button", "is-danger");
     nextBtn.innerHTML = "next"
     prevBtn.innerHTML = "prev"
-
+    myListDiv.append(prevBtn)
     myListDiv.append(nextBtn)
 
 
-    if (!currentPage) {
-        myListDiv.append(prevBtn)
-    }
+    prevBtn.addEventListener("click", () => {
+        currentPage--;
+        myListDiv.innerHTML = "";
+        getNextCards(ANIME, itemsPerPage, currentPage);
+    })
+ 
+
+    
 
     nextBtn.addEventListener("click", () => {
         currentPage++;
@@ -50,7 +55,15 @@ function createNextPrevBtn() {
 
     })
 
+    if(currentPage === 1) {
+        prevBtn.disabled = true
+    } else {
+        prevBtn.disabled = false
+    }
+
+
 }
+console.log(currentPage)
 function getInitialMyList() {
   
     generateList(storageList);
@@ -100,13 +113,13 @@ function getInitialMyList() {
 
 function getNextCards(lsKey, pageSize, pageNumber) {
     const localAnimeCards = JSON.parse(localStorage.getItem(lsKey));
-    console.log(localAnimeCards)
+    
     var startCard = pageSize * (pageNumber - 1);
-    console.log(startCard)
+   
     var lastCard = pageSize * pageNumber;
-    console.log(lastCard)
+   
     var paginatedAnimeCards = localAnimeCards.slice(startCard, lastCard)
-    console.log(paginatedAnimeCards)
+    
     generateList(paginatedAnimeCards);
     createNextPrevBtn();
 
