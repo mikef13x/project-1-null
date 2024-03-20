@@ -1,12 +1,42 @@
 
 body {
     background-image: url(./assets/images/pink-anime-background-1920-x-1080-sqc1z848r0z9ez75.jpg);
-    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    background-attachment: fixed;
+    
 }
 .navbar {
     background-image: linear-gradient(to right, rgb(255, 188, 252), rgb(118, 194, 245));
     
+}
+
+
+.listImage {
+    height: 250px;
+    margin-right: 200px;
+    display: flex;
+    
+}
+
+.animeList {
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+    
+}
+button {
+    margin:40px;
+    width: 300px;
+    height: 80px;
+    font-size:24px;
+}
+
+div {
+    display: block;
+}
+
+.box {
+    display:flex
+
 }
