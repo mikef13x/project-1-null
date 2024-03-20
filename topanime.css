@@ -6,8 +6,8 @@
 body {
     background-image: url(./assets/background-img.png);
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    background-position: center;
+    background-attachment: fixed;
 
 }
 
@@ -30,7 +30,7 @@ button {
 }
 
 .anime-img {
-    max-height: 100px;
+    max-height: 150px;
     position: absolute;
     left: 2rem;
 }
@@ -43,8 +43,13 @@ button {
     background-color: pink;
     color: white;
     display: none;
+    position: relative;
 }
 
 .anime-info {
     cursor: default;
+}
+
+.box {
+    max-height: 200px;
 }

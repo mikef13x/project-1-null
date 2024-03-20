@@ -1,7 +1,7 @@
 var topAnimeURL = 'https://api.jikan.moe/v4/top/anime';
 var currentPage = 1;
 var animeList = JSON.parse(localStorage.getItem("Anime")) || []
-var itemsPerPage = 10;
+var itemsPerPage = 25;
 
 
 function getTopAnime() {
@@ -20,9 +20,9 @@ function getTopAnime() {
                 var malId = data.data[i].mal_id;
 
                 console.log(animeTitle)
-
                 var animeCard = document.createElement('div');
                 animeCard.classList.add('box');
+                animeCard.setAttribute('id', malId);
 
 
 
@@ -34,7 +34,7 @@ function getTopAnime() {
                     <h4><strong>${rank}</strong></h4>
                     <p>${episodes}</p>
                     <p>${score}</p>
-                    <button id="${malId}" data-anime-title="${animeTitle.toString()}" data-anime-image=${image} class="button is-danger">+ Add to MyList</button>
+                    <button id="${malId}" data-anime-title="${animeTitle.toString()}" data-anime-image=${image} class="button is-danger is-hovered">+ Add to MyList</button>
                          `;
 
                 document.querySelector('.top-anime-content').appendChild(animeCard);
@@ -43,18 +43,20 @@ function getTopAnime() {
 
                 var modal = document.createElement('div');
                 modal.classList.add('modal', 'modal-card');
-                modal.innerHTML = `<p>${newSynopsis}</p>`
-                console.log(newSynopsis)
+                modal.innerHTML = `<p>${newSynopsis}</p>`;
+                modal.setAttribute('id', `${malId}-modal`);
+
                 animeCard.appendChild(modal);
 
-                animeCard.addEventListener('mouseenter', () => {
-                    modal.style.display = 'block';
-                });
-                animeCard.addEventListener('mouseleave', () =>{
-                    modal.style.display = 'none';
-                })
+                (function(currentAnimeCard, currentModal) {
+                    currentAnimeCard.addEventListener('mouseenter', () => {
+                        currentModal.style.display = 'block';
+                    });
+                    currentAnimeCard.addEventListener('mouseleave', () => {
+                        currentModal.style.display = 'none';
+                    });
+                })(animeCard, modal);
             }
-
 
             var nextPageButton = document.createElement('button');
             nextPageButton.classList.add('button', 'are-medium', 'is-responsive', 'is-hovered', 'is-danger');
@@ -85,7 +87,6 @@ function getTopAnime() {
 
 getTopAnime();
 
-
 function setList(event) {
     console.log("working", event.target.getAttribute("data-anime-title"));
     var animeTitle = event.target.getAttribute("data-anime-title");
@@ -99,8 +100,11 @@ function setList(event) {
     }
     console.log(animeObj);
     animeList.push(animeObj);
-    console.log(animeList);
-    localStorage.setItem("Anime", JSON.stringify(animeList));
+    console.log(animeList);;
+    if(!animeList.join('').includes(animeTitle)){
+        animeList.push(animeTitle)
+        localStorage.setItem("Anime", JSON.stringify(animeList))
+    }
     //     if (animeList.join("").includes(animeCard) === false) {
     //         animeList.push(animeCard)
     //         localStorage.setItem("Anime", JSON.stringify(animeList))
