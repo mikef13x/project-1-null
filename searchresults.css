@@ -25,6 +25,17 @@ html{
   }
 
   .animeCard{
-    background-image: linear-gradient(rgb(255, 222, 253), rgb(196, 231, 255));
+    background-image: linear-gradient(rgb(251, 206, 248), rgb(205, 235, 255));
   }
   
+   .card-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+  
+
+  .image{
+    height: 500px;
+    width: auto;
+  }
