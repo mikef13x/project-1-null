@@ -55,11 +55,23 @@ topAnime.addEventListener("click", topAnimeList);
 
 var goToResults = document.querySelector("#goToResults")
 var resultsUrl = "./searchresults.html"
+
 function resultsPage(event) {
     event.preventDefault()
-    document.location.assign(resultsUrl)
+    var searchInput = document.querySelector('#searchInput')
+    var searchTerm = searchInput.value.trim()
+    
+    if(searchTerm){
+      var newUrl = `${resultsUrl}?q=${(searchTerm)}`
+      document.location.assign(newUrl)
+      
+    } else {
+      alert('Please enter a valid Term')
+    }
 
 }
+
+
 
 goToResults.addEventListener("click", resultsPage)
 
