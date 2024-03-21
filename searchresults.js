@@ -112,7 +112,7 @@ function searchAnime(searchTerm){
         .catch(error => console.error('Failed to fetch data:', error));
 }
 });
-
+var animeList = JSON.parse(localStorage.getItem("Anime")) || []
 function setList(event) {
     console.log("working", event.target.getAttribute("data-anime-title"));
     var animeTitle = event.target.getAttribute("data-anime-title");
