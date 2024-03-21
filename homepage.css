@@ -1,14 +1,8 @@
 .message{
 width: 40vw;
-height: 25vh;
-margin-top: 20px;
 }
-.message-header{
-    display:block;
-}
+
 #article  {
-    display: flex;
-    justify-content: center;
     margin-top: 200px;
 }
 
@@ -39,7 +33,4 @@ body {
 
 
 
-.noMargin {
-    margin: 0px;
-}
 
