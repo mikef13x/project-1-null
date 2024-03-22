@@ -1,4 +1,3 @@
-
 html {
     background-image: url(./assets/images/pink-anime-background-1920-x-1080-sqc1z848r0z9ez75.jpg);
     background-size: cover;
@@ -7,23 +6,16 @@ html {
     background-repeat: no-repeat;
 }
 
-
-    
-
 .navbar {
     background-image: linear-gradient(to right, rgb(255, 188, 252), rgb(118, 194, 245));
 }
 
-
 .listImage {
     height: 250px;
-    margin-right: 200px;
+    margin-right: 300px;
+    
 }
 
 .animeList {
     font-size: 30px;
 }
-
-
-
-
