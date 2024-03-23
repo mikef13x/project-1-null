@@ -37,7 +37,7 @@ button {
     border-radius: 5px;
     color: #CC313D;
     display: none;
-
+    z-index: 1;
 }
 
 .anime-info {
