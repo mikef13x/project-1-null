@@ -5,7 +5,7 @@ html,body{
 
 html{
     height: 100vh;
-    background-image: url(Skyline.jpeg);
+    background-image: url(assets/images/pinkskyline.webp);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
