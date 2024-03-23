@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openModal($el) {
     $el.classList.add('is-active');
-  }
+  };
 
   function closeModal($el) {
     $el.classList.remove('is-active');
-  }
+  };
 
   function closeAllModals() {
     (document.querySelectorAll('.modal') || []).forEach(($modal) => {
       closeModal($modal);
     });
-  }
+  };
 
   (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
     const modal = $trigger.dataset.target;
@@ -39,42 +39,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-var topAnime = document.querySelector("#topAnime")
- var   topAnimeUrl = "./topanime.html"
+var topAnime = document.querySelector("#topAnime");
+ var   topAnimeUrl = "./topanime.html";
 function topAnimeList(event) {
-    event.preventDefault()
-    document.location.assign(topAnimeUrl)
-}
+    event.preventDefault();
+    document.location.assign(topAnimeUrl);
+};
 
 topAnime.addEventListener("click", topAnimeList);
 
-var goToResults = document.querySelector("#goToResults")
-var resultsUrl = "./searchresults.html"
+var goToResults = document.querySelector("#goToResults");
+var resultsUrl = "./searchresults.html";
 
 function resultsPage(event) {
-    event.preventDefault()
-    var searchInput = document.querySelector('#searchInput')
-    var searchTerm = searchInput.value.trim()
+    event.preventDefault();
+    var searchInput = document.querySelector('#searchInput');
+    var searchTerm = searchInput.value.trim();
     
     if(searchTerm){
-      var newUrl = `${resultsUrl}?q=${(searchTerm)}`
-      document.location.assign(newUrl)
+      var newUrl = `${resultsUrl}?q=${(searchTerm)}`;
+      document.location.assign(newUrl);
       
     } else {
-      alert('Please enter a valid Term')
-    }
-}
+      alert('Please enter a valid Term');
+    };
+};
 
-goToResults.addEventListener("click", resultsPage)
+goToResults.addEventListener("click", resultsPage);
 
-var myList = document.querySelector("#myList")
-var myListUrl = "./mylist.html"
+var myList = document.querySelector("#myList");
+var myListUrl = "./mylist.html";
 function myListPage(event) {
-    event.preventDefault()
-    document.location.assign(myListUrl)
-}
+    event.preventDefault();
+    document.location.assign(myListUrl);
+};
 
-myList.addEventListener("click", myListPage)
+myList.addEventListener("click", myListPage);
 
 var animeQuoteUrl = "https://animechan.xyz/api/random";
 
@@ -82,17 +82,17 @@ function getAnimeQuote() {
   fetch(animeQuoteUrl)
   .then(response => response.json())
   .then (data => {
-    var quoteArea = document.querySelector(".quote")
+    var quoteArea = document.querySelector(".quote");
     quoteArea.innerHTML = '"' + data["quote"] + '"';
 
-    var quoteAuthor = document.createElement("p")
-    quoteAuthor.innerHTML = "- " + data["character"]
+    var quoteAuthor = document.createElement("p");
+    quoteAuthor.innerHTML = "- " + data["character"];
     quoteArea.append(quoteAuthor);
 
-    var quoteShow = document.createElement("p")
+    var quoteShow = document.createElement("p");
     quoteShow.innerHTML = "Anime: " + data["anime"] ;
     quoteAuthor.append(quoteShow);
-  })
-}
+  });
+};
 
 getAnimeQuote();
