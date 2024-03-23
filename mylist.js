@@ -10,11 +10,7 @@ function generateList(cardsList) {
         var animeList = document.createElement("div");
         var removeBtn = document.createElement("button");
        
-        animeList.classList.add('box');
-        animeList.classList.add("is-flex");
-        animeList.classList.add("has-text-weight-bold");
-        animeList.classList.add("is-align-items-center");
-        
+        animeList.classList.add('box', 'is-flex', 'has-text-weight-bold', 'is-align-items-center');
         myListDiv.classList.add("is-block");
         removeBtn.classList.add("button", "is-small", "is-danger","m-6");
         removeBtn.innerHTML = "X";
@@ -43,7 +39,9 @@ function generateList(cardsList) {
         localStorage.removeItem("Anime");
         location.reload();
     });
-   
+    // removeBtn.addEventListener('click', function() {
+    //     localStorage.removeItem("Anime"[i])
+    // });
 }
 function getInitialMyList() {
     generateList(storageList);
