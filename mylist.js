@@ -18,7 +18,7 @@ function generateList(cardsList) {
         var image = cardsList[i].image;
         var imageEl = document.createElement("img");
         var titleEl = document.createElement("p");
-        titleEl.classList.add("has-text-centered")
+        titleEl.classList.add("has-text-centered");
        
         imageEl.src = image;
         titleEl.textContent = title;
@@ -32,7 +32,7 @@ function generateList(cardsList) {
       
         if (cardsList[i]) {
             myListDiv.append(animeList);
-            myListDiv.append(clearList)
+            myListDiv.append(clearList);
         };
         (function(index) {
         removeBtn.addEventListener('click', function() {
@@ -48,12 +48,12 @@ function generateList(cardsList) {
         location.reload();
     });
    
-}
+};
 
  
 function getInitialMyList() {
     generateList(storageList);
-}
+};
 getInitialMyList();
 
 
