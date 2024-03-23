@@ -90,7 +90,7 @@ function searchAnime(searchTerm){
               savebutton.classList.add('button','is-danger','mt-2','ml-5')
               savebutton.setAttribute('data-anime-title',anime.title.toString());
               savebutton.setAttribute('data-anime-image',anime.images.jpg.large_image_url)
-              savebutton.textContent= ('+ Add To My List')
+              savebutton.textContent= ('+ Add to My List')
               savebutton.addEventListener('click',setList)
              
 
