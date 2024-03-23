@@ -21,36 +21,38 @@ function getTopAnime() {
                 var malId = data.data[i].mal_id;
                 // Any data that has no episodes and no rank then create a div and box for the anime.
                 if (!!rank && !!episodes) {
-                    animeCard = document.createElement('div');
+                    animeCard = document.createElement('box');
                     animeCard.classList.add('box');
                     animeCard.setAttribute('id', malId);
 
                     animeCard.innerHTML = `
                             <img class='anime-img' src="${image}">
                             <div class='anime-info is-text-align-center'>
-                            <h1><strong>${animeTitle}</strong></h1>
+                            <h1 class='anime-title'><strong>${animeTitle}</strong></h1>
                             <h4><strong>Rank: ${rank}</strong></h4>
                             <p>(${episodes} eps)</p>
                             <p>⭐${score}</p>
-                            <button id="${malId}" data-anime-title="${animeTitle.toString()}" data-anime-image=${image} class="button is-danger m-4">+ Add to MyList</button>
+                            <button id="${malId}" data-anime-title="${animeTitle.toString()}" data-anime-image=${image} class="button is-danger m-4">+ Add to My List</button>
+                            </div>
                                 `;
 
                     document.querySelector('.top-anime-content').appendChild(animeCard);
                     var myListBtn = document.getElementById(malId);
                     myListBtn.addEventListener("click", setList);
                     //creates the modal
-                    var modal = document.createElement('div');
+                    var modal = document.createElement('container');
                     modal.classList.add('modal', 'modal-card', 'p-4');
                     modal.innerHTML = `<p>${newSynopsis}</p>`;
                     modal.setAttribute('id', `${malId}-modal`);
 
+                    // var animeTitleElement = animeCard.querySelector('.anime-title');
                     animeCard.appendChild(modal);
 
-                    (function (currentAnimeCard, currentModal) {
-                        currentAnimeCard.addEventListener('mouseenter', () => {
+                    (function (animeCard, currentModal) {
+                        animeCard.addEventListener('mouseenter', () => {
                             currentModal.style.display = 'block';
                         });
-                        currentAnimeCard.addEventListener('mouseleave', () => {
+                        animeCard.addEventListener('mouseleave', () => {
                             currentModal.style.display = 'none';
                         });
                     })(animeCard, modal);
