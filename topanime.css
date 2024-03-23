@@ -13,20 +13,16 @@ body {
 
 #pageTitle {
     color: white;
-    margin-top:20px;
     border-radius: 5px;
     background-color: rgb(255, 188, 252);
 }
 
 button {
-    margin: 1rem;
     width: 200px;
 }
 
 .my-list-btn {
-    display: flex;
     position: absolute;
-    right: 0px;
 }
 
 .anime-img {
@@ -35,22 +31,15 @@ button {
     left: 2rem;
 }
 
-.anime-info {
-    text-align: center;
-}
-
 .modal-card {
-    background-color: pink;
-    color: white;
+    background-color: rgb(248, 217, 222);
+    border: solid rgb(218, 98, 134);
+    border-radius: 5px;
+    color: #CC313D;
     display: none;
-    position: relative;
-    margin-right: 100px;
+
 }
 
 .anime-info {
     cursor: default;
-}
-
-.box {
-    max-height: 200px;
 }
