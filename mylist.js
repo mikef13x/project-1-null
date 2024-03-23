@@ -34,15 +34,23 @@ function generateList(cardsList) {
             myListDiv.append(animeList);
             myListDiv.append(clearList)
         };
+        (function(index) {
+        removeBtn.addEventListener('click', function() {
+            storageList.splice(index, 1);
+            localStorage.setItem(ANIME, JSON.stringify(storageList));
+            animeList.remove();
+            location.reload();
+        });
+    })(i);
     };
     clearList.addEventListener('click', function() {
         localStorage.removeItem("Anime");
         location.reload();
     });
-    // removeBtn.addEventListener('click', function() {
-    //     localStorage.removeItem("Anime"[i])
-    // });
+   
 }
+
+ 
 function getInitialMyList() {
     generateList(storageList);
 }
