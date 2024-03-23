@@ -1,9 +1,9 @@
-body {
+html {
     background-image: url(./assets/images/pink-anime-background-1920-x-1080-sqc1z848r0z9ez75.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    background-attachment: fixed;
 }
 
 .navbar {
