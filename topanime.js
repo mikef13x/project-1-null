@@ -90,6 +90,7 @@ getTopAnime();
 
 // function for setting localstorage for the myList page.
 function setList(event) {
+    event.preventDefault()
     var animeTitle = event.target.getAttribute("data-anime-title");
     var imgUrl = event.target.getAttribute("data-anime-image");
     var animeObj = {
