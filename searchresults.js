@@ -114,6 +114,7 @@ function searchAnime(searchTerm){
 });
 var animeList = JSON.parse(localStorage.getItem("Anime")) || []
 function setList(event) {
+    event.preventDefault()
   console.log("working", event.target.getAttribute("data-anime-title"));
   var animeTitle = event.target.getAttribute("data-anime-title");
   console.log(animeTitle);
@@ -127,7 +128,7 @@ function setList(event) {
   const isTitleInArray = animeList.some(obj => obj.title === animeTitle); 
   if (!isTitleInArray) {
       animeList.push(animeObj);
-      animeList.push(animeCard)
+      animeList.push()
       localStorage.setItem("Anime", JSON.stringify(animeList.filter(obj => Object.keys(obj).length !== 0)));
   }else {
       localStorage.setItem("Anime", JSON.stringify(animeList.filter(obj => Object.keys(obj).length !== 0)));
