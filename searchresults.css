@@ -4,7 +4,6 @@ html,body{
 
 
 html{
-    height: 100vh;
     background-image: url(./assets/images/pinkSkyline.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -28,14 +27,7 @@ html{
     background-image: linear-gradient(rgb(251, 206, 248), rgb(205, 235, 255));
   }
   
-   .card-image{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   }
-  
-
-  .image{
+  .displayImage{
     height: 500px;
     width: auto;
-  }
+   } 
