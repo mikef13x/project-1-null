@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded',function(){
   }
 
 
-
+// query selectors
 const searchForm = document.querySelector('#searchForm');
 const searchInput = document.querySelector('#searchInput');
 const resultsContainer = document.getElementById('resultsContainer');
@@ -20,7 +20,7 @@ searchForm.addEventListener('submit', function(event) {
   
   
 });
-
+// function to make the api call
 function searchAnime(searchTerm){
   let apiUrl = `https://api.jikan.moe/v4/anime?q=${(searchTerm)}`
 
@@ -32,6 +32,7 @@ function searchAnime(searchTerm){
           return response.json();
       })
       .then(data => {
+        // lets animeDate = data.data from the jikan database
           const animeData = data.data;
           console.log('Anime Data:', animeData);
         
@@ -51,11 +52,13 @@ function searchAnime(searchTerm){
 
               const cardImage = document.createElement('div');
               cardImage.classList.add('card-image');
-              cardImage.classList.add('is-flex-wrap','is-justify-content-center','is-align-items-center')
+              cardImage.classList.add('is-flex','is-justify-content-center','is-align-items-center')
 
               const image = document.createElement('img');
               image.src = anime.images.jpg.large_image_url;
               image.classList.add('image');
+              image.classList.add('displayImage')
+
 
               const cardContent = document.createElement('div');
               cardContent.classList.add('card-content');
@@ -73,12 +76,21 @@ function searchAnime(searchTerm){
               animeScore.textContent = 'Rating: ⭐' + anime.score;
 
               const animeTrailer = document.createElement('a');
+            //   if statement when anime trailer = null / doesnt exist
+              if (anime.trailer.url){  
+              
               animeTrailer.classList.add('animeTrailer');
               animeTrailer.href = anime.trailer.url;
               animeTrailer.textContent = 'Watch Trailer';
               animeTrailer.classList.add('has-text-danger')
+            //  Opens a new tab for the trailer instead of redirecting the current page
               animeTrailer.target = "_blank";
-              
+
+              }else{
+                animeTrailer.textContent='Trailer Not Available'
+                animeTrailer.classList.add('has-text-danger')
+              }
+            //   font awesome youtube icon for trailers
               const trailerIcon= document.createElement('i')
               trailerIcon.classList.add('fas')
               trailerIcon.classList.add('fa-brands')
@@ -93,7 +105,7 @@ function searchAnime(searchTerm){
               savebutton.textContent= ('+ Add to My List')
               savebutton.addEventListener('click',setList)
              
-
+            //   append card elements to the document
               cardImage.appendChild(image);
               cardContent.appendChild(title);
               cardContent.appendChild(synopsis);
@@ -112,6 +124,7 @@ function searchAnime(searchTerm){
       .catch(error => console.error('Failed to fetch data:', error));
 }
 });
+// function for saving items to local storage
 var animeList = JSON.parse(localStorage.getItem("Anime")) || []
 function setList(event) {
     event.preventDefault()
