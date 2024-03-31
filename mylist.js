@@ -10,7 +10,7 @@ function generateList(cardsList) {
         var animeList = document.createElement("div");
         var removeBtn = document.createElement("button");
        
-        animeList.classList.add('box', 'is-flex', 'has-text-weight-bold', 'is-align-items-center');
+        animeList.classList.add('box', 'is-flex', 'has-text-weight-bold', 'is-align-items-center', 'is-justify-content-space-between');
         myListDiv.classList.add("is-block");
         removeBtn.classList.add("button", "is-small", "is-danger","m-6");
         removeBtn.innerHTML = "X";
