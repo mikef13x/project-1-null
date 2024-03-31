@@ -13,8 +13,8 @@ body {
 
 #pageTitle {
     color: white;
-    border-radius: 5px;
-    background-color: rgb(255, 188, 252);
+    /* border-radius: 5px;
+    background-color: rgb(255, 188, 252); */
 }
 
 button {
@@ -47,3 +47,7 @@ button {
 /* .anime-title {
     cursor: pointer;
 } */
+
+.box {
+    background-image: linear-gradient(rgb(251, 206, 248), rgb(205, 235, 255));
+}
